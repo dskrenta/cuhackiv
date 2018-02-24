@@ -1,0 +1,152 @@
+/* - Larger Screen Sizes - */
+@media only screen and (min-width: 880px)
+{
+    .main
+    {
+        align-items: center;
+    }
+    .containerHome
+    {
+        width: 65%;
+    }
+    .logoText
+    {
+        font-size: 50px;
+        line-height: 60px;
+    }
+    .motto
+    {
+        font-size: 60px;
+        line-height: 60px;
+    }
+    .homeText
+    {
+        font-size: 22px;
+        line-height: 32px;
+    }
+    .homeFooter p
+    {
+        font-size: 18px;
+    }
+    .signInButton
+    {
+        margin-bottom: 7vh;
+    }
+}
+/* - Smaller Screen Sizes - */
+@media only screen and (max-width: 880px)
+{
+    .main
+    {
+        align-items: flex-start;
+    }
+    .containerHome
+    {
+        width: 95%;
+        margin: 50px 0 150px;
+    }
+    .logoText
+    {
+        font-size: calc(20px + 1vw);
+        line-height: calc(24px + 1vw);
+    }
+    .motto
+    {
+        font-size: calc(25px + 1vw);
+        line-height: calc(25px + 1vw);
+    }
+    .homeText
+    {
+        font-size: calc(15px + 1vw);
+        line-height: calc(15px + 1.25vw);
+    }
+    .homeFooter p
+    {
+        font-size: calc(5px + 1vw);
+    }
+    .signInButton
+    {
+        margin-bottom: 50px;
+    }
+}
+
+.main
+{
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+
+    display: flex;
+    overflow-y: scroll;
+    justify-content: center;
+
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+
+    color: #fff;
+    background-color: #2a85d8;
+}
+.containerHome
+{
+    text-align: center;
+}
+.logoImage
+{
+    height: 90px;
+}
+.logoText
+{
+    font-family: 'Pacifico', cursive;
+
+    margin: 0 0 30px;
+}
+.motto
+{
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+
+    margin: 4vh 0 2vh;
+}
+.homeText
+{
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+
+    margin-bottom: 6vh;
+}
+.homeFooter
+{
+    position: fixed;
+    bottom: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+
+    color: rgba(255, 255, 255, .6);
+    background-color: rgba(42, 133, 216, .6);;
+}
+.homeFooter a:after
+{
+    margin: 0 8px;
+
+    content: '\00B7';
+}
+.homeFooter a
+{
+    cursor: pointer;
+    text-decoration: none;
+
+    color: rgba(255, 255, 255, .6);
+}
+.homeFooter p
+{
+    display: inline-flex;
+}
+.signInButton button
+{
+    cursor: pointer;
+}
