@@ -1,16 +1,18 @@
 'use strict';
 
 const generateResolver = require('../utils/generateResolver');
-const searchEventsResolver = require('./searchEventsResolver');
-const createEventResolver = require('./createEventResolver');
+const getTopicsResolver = require('./getTopicsResolver');
+const createTopicResolver = require('./createTopicResolver');
+const updateTopicResolver = require('./updateTopicResolver');
 const userAuthResolver = require('./userAuthResolver');
 
 const resolvers = {
   Query: {
-    searchEvents: generateResolver(searchEventsResolver)
+    getTopics: generateResolver(getTopicsResolver)
   },
   Mutation: {
-    createEvent: generateResolver(createEventResolver),
+    createTopic: generateResolver(createTopicResolver),
+    updateTopic: generateResolver(updateTopicResolver),
     userAuth: generateResolver(userAuthResolver)
   }
 };

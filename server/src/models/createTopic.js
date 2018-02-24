@@ -1,19 +1,19 @@
 'use strict';
 
 const getTimestamp = require('../utils/getTimestamp');
-const { EVENT_INDEX } = require('../utils/constants');
+const { TOPICS_INDEX } = require('../utils/constants');
 
-async function createEvent({
+async function createTopic({
   client, 
   userId, 
-  event, 
+  topic, 
   createdAt = getTimestamp()
 }) {
   try {
     const res = await client.index({
-      index: EVENT_INDEX,
-      type: 'event',
-      body: Object.assign({}, event, {hostId: userId, createdAt})
+      index: TOPICS_INDEX,
+      type: 'topic',
+      body: Object.assign({}, event, {userId: userId, createdAt})
     });
 
     if (res.created) {
@@ -25,4 +25,4 @@ async function createEvent({
   }
 }
 
-module.exports = createEvent;
+module.exports = createTopic;
