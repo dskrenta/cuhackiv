@@ -5,7 +5,7 @@ const getTopic = require('../models/getTopic');
 
 async function getTopicsResolver({ client, context, args: { topicId, newContent } }) {
   try {
-    await getTopics({ 
+    await editTopicContent({ 
       client, 
       topicId, 
       newContent

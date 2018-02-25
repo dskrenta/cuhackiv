@@ -37,9 +37,7 @@ const RenderTopic = ({ topic }) => (
         />
       </div>
     </div>
-    <div className={styles.contentContain}>
-      <TopicEditor content={topic.content} />
-    </div>
+    <TopicEditor topicId={topic.id} content={topic.content} />
   </div>
 );
 
@@ -68,7 +66,8 @@ export default graphql(GetTopicQuery, {
     return {
       variables: {
         topicId: match.params.id
-      }
+      },
+      fetchPolicy: 'network-only'
     };
   },
   props({ data: { loading, getTopic } }) {

@@ -62,6 +62,9 @@ const GetTopicsQuery = gql`
 `;
 
 export default graphql(GetTopicsQuery, {
+  options: {
+    fetchPolicy: 'network-only'
+  },
   props({ data: { loading, getTopics } }) {
     return {
       loading, 

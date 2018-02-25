@@ -23,7 +23,7 @@ const schema = `
     description: String!
     imageUrl: String!
     tags: [String]!
-    content: JSON!
+    content: String!
     createdAt: String!
   }
 
@@ -42,7 +42,7 @@ const schema = `
   type Mutation {
     userAuth(token: String!): UserAuth!
     createTopic(topic: TopicInput!): Topic!
-    editTopicContent(newContent: JSON!): Topic!
+    editTopicContent(topicId: ID!, newContent: String!): Topic!
   }
 `;
 

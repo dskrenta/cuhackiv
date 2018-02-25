@@ -17,7 +17,6 @@
     flex-flow: row nowrap;
     align-items: center;
     padding: 15px 0;
-    border-bottom: 1px solid #ddd;
 }
 .image {
     height: 150px;
@@ -62,7 +61,4 @@
     border-radius: 50px;
     max-height: 26px;
     background-color: rgba(0, 107, 187, 0.3);
-}
-.contentContain {
-
 }
