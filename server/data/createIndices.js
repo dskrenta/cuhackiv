@@ -28,30 +28,22 @@ async function createIndicies() {
       }
     });
 
-    /*
     await client.indices.create({
-      index: TOPICS_INDEX,
+      index: TOPICS_INDEX, 
       body: {
         mappings: {
-          event: {
+          topic: {
             properties: {
-              hostId: {type: 'keyword'},
+              userId: {type: 'keyword'},
               title: {type: 'text'},
-              image: {type: 'text', index: false},
-              tags: {type: 'keyword'},
               description: {type: 'text'},
-              location: {type: 'geo_point'},
-              address: {type: 'object'},
-              locationDetails: {type: 'text'},
-              eventTimestampStart: {type: 'date'},
-              eventTimestampEnd: {type: 'date'},
-              createdAt: {type: 'date'}
+              tags: {type: 'text'},
+              content: {type: 'text', index: false}
             }
           }
         }
       }
     });
-    */
   }
   catch (error) {
     console.error(error);

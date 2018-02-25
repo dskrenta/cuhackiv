@@ -1,6 +1,8 @@
 'use strict';
 
 const schema = `
+  scalar JSON
+
   type User {
     id: ID!
     email: String!
@@ -24,14 +26,22 @@ const schema = `
     createdAt: String!
   }
 
+  input TopicInput {
+    userId: ID!
+    title: String!
+    description: String!
+    tags: [String]!
+  }
+
   type Query {
+    getTopic(topicId: ID!): Topic!
     getTopics(offset: Int, limit: Int): [Topic]!
   }
 
   type Mutation {
     userAuth(token: String!): UserAuth!
     createTopic(topic: TopicInput!): Topic!
-    updateTopic(topic: TopicInput!): Topic!
+    editTopicContent(newContent: JSON!): Topic!
   }
 `;
 

@@ -16,11 +16,9 @@ async function deleteIndices() {
       index: USER_INDEX
     });
 
-    */
     await client.indices.delete({
       index: TOPICS_INDEX
     });
-    */
   }
   catch (error) {
     console.error(error);
