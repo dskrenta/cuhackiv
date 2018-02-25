@@ -175,6 +175,8 @@ module.exports = {
                     options: {
                       hmr: false,
                       modules: true,
+                      minimize: true,
+                      sourceMap: true,
                     },
                   },
                   use: [

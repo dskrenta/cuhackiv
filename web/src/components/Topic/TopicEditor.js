@@ -10,7 +10,7 @@ class TopicEditor extends React.Component {
     const { content } = this.props; 
     return (
       <Debounce time="5000" handler="onChange">
-        <Editor onChange={this.save} value={atob(content)} />
+        <Editor onChange={this.save} value={unescape(content)} />
       </Debounce>
     );
   }
@@ -20,7 +20,7 @@ class TopicEditor extends React.Component {
       await this.props.mutate({
         variables: {
           topicId: this.props.topicId,
-          newContent: btoa(value)
+          newContent: escape(value)
         }
       });
     }

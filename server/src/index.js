@@ -8,6 +8,7 @@ const { graphqlKoa, graphiqlKoa } = require('graphql-server-koa');
 const { makeExecutableSchema } = require('graphql-tools');
 const { formatError } = require('apollo-errors');
 const elasticsearch = require('elasticsearch');
+const koaStatic = require('koa-static');
 
 const schema = require('./schema');
 const resolvers = require('./resolvers');
@@ -45,5 +46,6 @@ router.post('/graphql', graphqlKoa((ctx) => {
 router.get('/graphiql', graphiqlKoa({ endpointURL: '/graphql' }));
 
 app.use(router.routes()).use(router.allowedMethods());
+app.use(koaStatic('../web/build'));
 
 app.listen(PORT);
