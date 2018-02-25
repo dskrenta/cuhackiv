@@ -9,7 +9,7 @@ class TopicEditor extends React.Component {
   render() {
     const { content } = this.props; 
     return (
-      <Debounce time="5000" handler="onChange">
+      <Debounce time="2000" handler="onChange">
         <Editor onChange={this.save} value={unescape(content)} />
       </Debounce>
     );
