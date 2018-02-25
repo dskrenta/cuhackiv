@@ -1,18 +1,31 @@
 'use strict';
 
+const GraphQLJSON = require('graphql-type-json');
+
 const generateResolver = require('../utils/generateResolver');
-const searchEventsResolver = require('./searchEventsResolver');
-const createEventResolver = require('./createEventResolver');
+const getTopicsResolver = require('./getTopicsResolver');
+const createTopicResolver = require('./createTopicResolver');
+const editTopicContentResolver = require('./editTopicContentResolver');
 const userAuthResolver = require('./userAuthResolver');
+const getTopicResolver = require('./getTopicsResolver');
+const getUser = require('../models/getUser');
 
 const resolvers = {
   Query: {
-    searchEvents: generateResolver(searchEventsResolver)
+    getTopic: generateResolver(getTopicResolver),
+    getTopics: generateResolver(getTopicsResolver)
   },
   Mutation: {
-    createEvent: generateResolver(createEventResolver),
+    createTopic: generateResolver(createTopicResolver),
+    editTopicContent: generateResolver(editTopicContentResolver),
     userAuth: generateResolver(userAuthResolver)
-  }
+  },
+  Topic: {
+    user: generateResolver(async ({ obj, client }) => {
+      return await getUser({ client, userId: obj.userId });
+    })
+  },
+  JSON: GraphQLJSON
 };
 
 module.exports = resolvers;
