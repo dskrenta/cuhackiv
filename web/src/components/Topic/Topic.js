@@ -3,7 +3,9 @@ import { graphql } from 'react-apollo';
 import gql from 'graphql-tag';
 import { ListItem } from 'material-ui/List';
 import Avatar from 'material-ui/Avatar';
+import TimeAgo from 'react-timeago';
 
+import TopicEditor from './TopicEditor';
 import Header from '../Header/Header';
 import styles from './Topic.css';
 
@@ -30,13 +32,13 @@ const RenderTopic = ({ topic }) => (
           disabled={true}
           leftAvatar={<Avatar src={topic.user.imageUrl} style={{left: 0, top: 10}} />}
           primaryText={topic.user.name}
-          secondaryText={topic.createdAt}
+          secondaryText={<span>Created <TimeAgo date={topic.createdAt} /></span>}
           style={{paddingLeft: 50, paddingTop: 14}}
         />
       </div>
     </div>
     <div className={styles.contentContain}>
-      <h3>Content</h3>
+      <TopicEditor />
     </div>
   </div>
 );
