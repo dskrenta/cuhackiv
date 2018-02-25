@@ -22,9 +22,8 @@ class Landing extends React.Component {
     return (
       <div className={styles.main}>
         <div className={styles.containerHome}>
-          <h1 className={styles.logoText}>CU Hack IV</h1>
-          <h1 className={styles.motto}>Policy by the people for the people.</h1>
-          <h2 className={styles.homeText}>Some really cool stuff...</h2>
+          <h1 className={styles.logoText}>Better <span className={styles.logoSpan}>America</span></h1>
+          <h3 className={styles.motto}>Policy by the people for the people.</h3>
           <div className={styles.signInButton}>
             <GoogleLogin
               clientId={GOOGLE_CLIENT_ID}

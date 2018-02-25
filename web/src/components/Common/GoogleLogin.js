@@ -105,7 +105,7 @@ class GoogleLogin extends Component {
     const disabled = this.state.disabled || this.props.disabled;
     const initialStyle = {
       display: 'inline-block',
-      background: '#d14836',
+      background: '#b00',
       color: '#fff',
       width: 190,
       paddingTop: 10,
@@ -114,7 +114,6 @@ class GoogleLogin extends Component {
       border: '1px solid transparent',
       fontSize: 16,
       fontWeight: 'bold',
-      fontFamily: 'Roboto',
     };
     const styleProp = (() => {
       if (style) {
