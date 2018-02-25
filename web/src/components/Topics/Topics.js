@@ -81,6 +81,7 @@ const Topics = ({ history }) => (
           </Link>
         </div>
       ))}
+      <Link to='/createTopic'><p>Create Topic</p></Link>
     </div>
   </div>
 );
