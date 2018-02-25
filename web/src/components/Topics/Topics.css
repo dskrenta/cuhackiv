@@ -1,0 +1,61 @@
+@media screen and (max-width: 600px) {
+    .grid {
+        flex-direction: column !important;
+    }
+}
+
+.grid {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    width: 95%;
+    max-width: 1200px;
+    margin: 25px auto;
+}
+.gridItem {
+    flex: 0 0 32%;
+    padding: 10px 0;
+    box-sizing: border-box;
+}
+.topicImage {
+    height: 125px;
+    object-fit: cover;
+}
+.topicContent {
+    padding: 16px 16px 10px;
+    position: relative;
+}
+.topicTitle {
+    font-size: 24px;
+    color: rgba(0, 0, 0, 0.87);
+    display: block;
+    line-height: 36px;
+    max-height: 36px;
+}
+.topicDesc {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.54);
+    display: block;
+    line-height: 17px;
+    max-height: 34px;
+}
+.topicTags {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    overflow: hidden;
+    margin-top: 10px;
+}
+.topicTag {
+    font-size: 14px;
+    color: #333;
+    margin: 0 5px 5px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 10px;
+    box-sizing: border-box;
+    border-radius: 50px;
+    max-height: 26px;
+    background-color: rgba(0, 107, 187, 0.3);
+}

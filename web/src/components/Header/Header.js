@@ -14,7 +14,11 @@ import { signOut, getUser } from '../../utils/userState';
 
 const linkStyle = {
   textDecoration: 'none',
-  color: 'rgb(33, 150, 243)',
+  color: '#06b',
+};
+
+const spanStyle = {
+  color: '#b00',
 };
 
 const appBarStyle = {
@@ -45,7 +49,7 @@ class Header extends React.Component {
     return (
       <div style={{marginBottom: '90px'}}>
         <AppBar
-          title={<Link to='/landing' style={linkStyle}>Event Aggregators</Link>}
+          title={<Link to='/landing' style={linkStyle}>Better <span style={spanStyle}>America</span></Link>}
           titleStyle={{fontFamily: 'Pacifico', textAlign: 'center'}}
           style={appBarStyle}
           iconElementRight={
