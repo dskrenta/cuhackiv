@@ -31,7 +31,13 @@ const Topics = ({ loading, getTopics = [], history }) => (
           </Link>
         </div>
       ))}
-      <Link to='/createTopic'><p>Create Topic</p></Link>
+      <div className={styles.gridItem}>
+        <Link to='/createTopic' style={{textDecoration: 'none'}}>
+          <div className={styles.createButton}>
+            Create<br/>Topic
+          </div>
+        </Link>
+      </div>
     </div>
   </div>
 );
