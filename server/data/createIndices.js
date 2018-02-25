@@ -37,6 +37,7 @@ async function createIndicies() {
               userId: {type: 'keyword'},
               title: {type: 'text'},
               description: {type: 'text'},
+              imageUrl: {type: 'text'},
               tags: {type: 'text'},
               content: {type: 'text', index: false}
             }

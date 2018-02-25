@@ -13,11 +13,11 @@ async function createTopic({
     const res = await client.index({
       index: TOPICS_INDEX,
       type: 'topic',
-      body: Object.assign({}, event, {userId: userId, createdAt})
+      body: Object.assign({}, topic, {userId: userId, createdAt, content: ''})
     });
 
-    if (res.created) {
-      return Object.assign({}, event, {id: res._id, createdAt});
+    if (res.result === 'created') {
+      return Object.assign({}, topic, {id: res._id, createdAt});
     }
   }
   catch (error) {

@@ -7,7 +7,7 @@ const getTopicsResolver = require('./getTopicsResolver');
 const createTopicResolver = require('./createTopicResolver');
 const editTopicContentResolver = require('./editTopicContentResolver');
 const userAuthResolver = require('./userAuthResolver');
-const getTopicResolver = require('./getTopicsResolver');
+const getTopicResolver = require('./getTopicResolver');
 const getUser = require('../models/getUser');
 
 const resolvers = {

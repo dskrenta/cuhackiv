@@ -6,7 +6,6 @@ import IconMenu from 'material-ui/IconMenu';
 import Avatar from 'material-ui/Avatar';
 import MenuItem from 'material-ui/MenuItem';
 import IconButton from 'material-ui/IconButton';
-import Menu from 'material-ui/svg-icons/navigation/menu';
 
 import 'typeface-pacifico';
 
@@ -44,8 +43,6 @@ class Header extends React.Component {
   }
 
   render() {
-    console.log(this.user);
-
     return (
       <div style={{marginBottom: '90px'}}>
         <AppBar

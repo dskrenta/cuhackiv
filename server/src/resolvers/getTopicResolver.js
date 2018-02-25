@@ -1,6 +1,6 @@
 'use strict';
 
-const getTopics = require('../models/getTopic');
+const getTopic = require('../models/getTopic');
 
 async function getTopicResolver({ client, context, args: { topicId } }) {
   try {

@@ -9,6 +9,8 @@ async function createTopicResolver({ client, context, args: { topic } }) {
       userId: context.user.id,
       topic
     });
+
+    return createdEvent;
   }
   catch (error) {
     console.error(error);

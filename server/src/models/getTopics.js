@@ -16,6 +16,8 @@ async function getTopics({ client, offset, limit, query }) {
         }
       }
     });
+
+    return flattenResponse({ res, array: true });
   }
   catch (error) {
     console.errror(error);

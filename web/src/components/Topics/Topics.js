@@ -1,84 +1,22 @@
 import React from 'react';
+import { graphql } from 'react-apollo';
+import gql from 'graphql-tag';
 import { Card, CardMedia } from 'material-ui';
 import { Link } from 'react-router-dom';
 
 import Header from '../Header/Header';
-
 import styles from './Topics.css';
 
-const sampleTopics = [
-  {
-    user: {
-      email: 'johndoes@email.com',
-      name: 'Johnathan Doeth',
-      imageUrl: 'http://services.expreso.ec/Granasa/img/',
-    },
-    title: 'Gun Control',
-    image: 'https://d18lkz4dllo6v2.cloudfront.net/cumulus_uploads/entry/2018-02-21/Gun%20control.jpg?w=660',
-    description: 'Regulate the manufacture, sale, transfer, possession, modification, or use of firearms by civilians.',
-    tags: ['Guns','Violence','Regulations','Gun Shows'],
-    createdAt: 'Feb 24th, 2018',
-  },
-  {
-    user: {
-      email: 'johndoes@email.com',
-      name: 'Johnathan Doeth',
-      imageUrl: 'http://services.expreso.ec/Granasa/img/',
-    },
-    title: 'Gun Control',
-    image: 'https://d18lkz4dllo6v2.cloudfront.net/cumulus_uploads/entry/2018-02-21/Gun%20control.jpg?w=660',
-    description: 'Regulate the manufacture, sale, transfer, possession, modification, or use of firearms by civilians.',
-    tags: ['Guns','Violence','Regulations','Gun Shows'],
-    createdAt: 'Feb 24th, 2018',
-  },
-  {
-    user: {
-      email: 'johndoes@email.com',
-      name: 'Johnathan Doeth',
-      imageUrl: 'http://services.expreso.ec/Granasa/img/',
-    },
-    title: 'Gun Control',
-    image: 'https://d18lkz4dllo6v2.cloudfront.net/cumulus_uploads/entry/2018-02-21/Gun%20control.jpg?w=660',
-    description: 'Regulate the manufacture, sale, transfer, possession, modification, or use of firearms by civilians.',
-    tags: ['Guns','Violence','Regulations','Gun Shows','Yeehaw'],
-    createdAt: 'Feb 24th, 2018',
-  },
-  {
-    user: {
-      email: 'johndoes@email.com',
-      name: 'Johnathan Doeth',
-      imageUrl: 'http://services.expreso.ec/Granasa/img/',
-    },
-    title: 'Gun Control',
-    image: 'https://d18lkz4dllo6v2.cloudfront.net/cumulus_uploads/entry/2018-02-21/Gun%20control.jpg?w=660',
-    description: 'Regulate the manufacture, sale, transfer, possession, modification, or use of firearms by civilians.',
-    tags: ['Guns','Violence','Regulations','Gun Shows'],
-    createdAt: 'Feb 24th, 2018',
-  },
-  {
-    user: {
-      email: 'johndoes@email.com',
-      name: 'Johnathan Doeth',
-      imageUrl: 'http://services.expreso.ec/Granasa/img/',
-    },
-    title: 'Gun Control',
-    image: 'https://d18lkz4dllo6v2.cloudfront.net/cumulus_uploads/entry/2018-02-21/Gun%20control.jpg?w=660',
-    description: 'Regulate the manufacture, sale, transfer, possession, modification, or use of firearms by civilians.',
-    tags: ['Guns','Violence','Regulations','Gun Shows'],
-    createdAt: 'Feb 24th, 2018',
-  },
-]
-
-const Topics = ({ history }) => (
+const Topics = ({ loading, getTopics = [], history }) => (
   <div>
     <Header history={history} />
     <div className={styles.grid}>
-      {sampleTopics.map((topic, index) => (
+      {getTopics.map((topic, index) => (
         <div key={index} className={styles.gridItem}>
-          <Link to='/topic/x' style={{textDecoration: 'none'}}>
+          <Link to={`/topic/${topic.id}`} style={{textDecoration: 'none'}}>
             <Card>
               <CardMedia>
-                <img src={topic.image} className={styles.topicImage} alt="" />
+                <img src={topic.imageUrl} className={styles.topicImage} alt="" />
               </CardMedia>
               <div className={styles.topicContent}>
                 <span className={styles.topicTitle}>{topic.title}</span>
@@ -104,4 +42,30 @@ const Topics = ({ history }) => (
   </div>
 );
 
-export default Topics;
+const GetTopicsQuery = gql`
+  query getTopics {
+    getTopics {
+      id
+      user {
+        id 
+        email 
+        name
+        imageUrl
+      }
+      title
+      description
+      imageUrl
+      tags
+      createdAt
+    }
+  }
+`;
+
+export default graphql(GetTopicsQuery, {
+  props({ data: { loading, getTopics } }) {
+    return {
+      loading, 
+      getTopics
+    };
+  }
+})(Topics);

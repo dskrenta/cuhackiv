@@ -21,15 +21,16 @@ const schema = `
     user: User!
     title: String!
     description: String!
+    imageUrl: String!
     tags: [String]!
     content: JSON!
     createdAt: String!
   }
 
   input TopicInput {
-    userId: ID!
     title: String!
     description: String!
+    imageUrl: String!
     tags: [String]!
   }
 
