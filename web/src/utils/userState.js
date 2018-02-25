@@ -1,6 +1,6 @@
 const USER_KEY = 'eventAppUser';
 const TOKEN_KEY = 'eventAppToken';
-const GOOGLE_CLIENT_ID = '504091725586-unbetrucfjvg8serl4u4buv8i78vl6tn.apps.googleusercontent.com';
+const GOOGLE_CLIENT_ID = '651469506426-0d2fvpdp5t11coeb7lihtk0acau5qe72.apps.googleusercontent.com';
 
 function loadGoogleLibrary() {
   return new Promise((resolve, reject) => {

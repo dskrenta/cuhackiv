@@ -18,7 +18,7 @@ const app = new Koa();
 const router = new Router();
 
 const client = new elasticsearch.Client({
-  host: 'http://localhost:9200',
+  host: 'https://search-octograde-fpz5otht3b3tbslivwa5xcdvle.us-west-1.es.amazonaws.com',
   log: 'trace'
 });
 
