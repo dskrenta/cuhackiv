@@ -19,7 +19,7 @@ class TagInput extends React.Component {
   }
 
   handleKeyPress = (event, onChange) => {
-    if (event.key == 'Enter' && this.state.value !== '') {
+    if (event.key === 'Enter' && this.state.value !== '') {
       event.preventDefault();
       const newTags = this.state.tags.concat(this.state.value);
       this.setState({ tags: newTags, value: '' });
@@ -28,7 +28,7 @@ class TagInput extends React.Component {
   }
 
   handleDelete = (tag, onChange) => {
-    const newTags = this.state.tags.filter(item => item != tag);
+    const newTags = this.state.tags.filter(item => item !== tag);
     this.setState({ tags: newTags});
     onChange(newTags);
   }
@@ -44,7 +44,7 @@ class TagInput extends React.Component {
           onChange={(e, v) => {this.parse(v)}}
           onKeyPress={(e) => {this.handleKeyPress(e, inputProps.input.onChange)}}
           name="tags"
-          autocomplete="off"
+          autoComplete="off"
         />
         <div className={styles.tagsContain}>
           {this.state.tags.map((tag, index) => (

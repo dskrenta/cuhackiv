@@ -10,7 +10,7 @@ async function getTopic({ client, topicId }) {
       id: topicId
     });
 
-    return Object.assign({}, res._source, {id: res._id});
+    return Object.assign({}, res._source, {id: topicId});
   }
   catch (error) {
     console.errror(error);
