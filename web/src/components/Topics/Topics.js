@@ -55,6 +55,18 @@ const sampleTopics = [
     tags: ['Guns','Violence','Regulations','Gun Shows'],
     createdAt: 'Feb 24th, 2018',
   },
+  {
+    user: {
+      email: 'johndoes@email.com',
+      name: 'Johnathan Doeth',
+      imageUrl: 'http://services.expreso.ec/Granasa/img/',
+    },
+    title: 'Gun Control',
+    image: 'https://d18lkz4dllo6v2.cloudfront.net/cumulus_uploads/entry/2018-02-21/Gun%20control.jpg?w=660',
+    description: 'Regulate the manufacture, sale, transfer, possession, modification, or use of firearms by civilians.',
+    tags: ['Guns','Violence','Regulations','Gun Shows'],
+    createdAt: 'Feb 24th, 2018',
+  },
 ]
 
 const Topics = ({ history }) => (
@@ -81,7 +93,13 @@ const Topics = ({ history }) => (
           </Link>
         </div>
       ))}
-      <Link to='/createTopic'><p>Create Topic</p></Link>
+      <div className={styles.gridItem}>
+        <Link to='/createTopic' style={{textDecoration: 'none'}}>
+          <div className={styles.createButton}>
+            Create<br/>Topic
+          </div>
+        </Link>
+      </div>
     </div>
   </div>
 );
