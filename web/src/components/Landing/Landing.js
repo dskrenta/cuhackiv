@@ -38,7 +38,7 @@ class Landing extends React.Component {
           </div>
         </div>
         <div className={styles.homeFooter}>
-          <p>&#169; Copyright Something 2018</p>
+          <p>Better America CU Hack IV 2018</p>
         </div>
       </div>
     );
