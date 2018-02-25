@@ -6,7 +6,7 @@ function change(value) {
 }
 
 const TopicEditor = ({ content }) => (
- <Editor onChange={change}/>
+ <Editor onChange={change} />
 );
 
 export default TopicEditor;

@@ -52,7 +52,6 @@ class Landing extends React.Component {
 
   onSuccess = async ({ tokenId }) => {
     try {
-      console.log(tokenId);
       const { data } = await this.props.mutate({
         variables: {
           token: tokenId

@@ -38,7 +38,7 @@ const RenderTopic = ({ topic }) => (
       </div>
     </div>
     <div className={styles.contentContain}>
-      <TopicEditor />
+      <TopicEditor content={topic.content} />
     </div>
   </div>
 );
@@ -57,6 +57,7 @@ const GetTopicQuery = gql`
       description
       imageUrl
       tags
+      content
       createdAt
     }
   }
