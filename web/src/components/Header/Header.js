@@ -49,7 +49,7 @@ class Header extends React.Component {
     return (
       <div style={{marginBottom: '90px'}}>
         <AppBar
-          title={<Link to='/landing' style={linkStyle}>Better <span style={spanStyle}>America</span></Link>}
+          title={<Link to='/topics' style={linkStyle}>Better <span style={spanStyle}>America</span></Link>}
           titleStyle={{fontFamily: 'Pacifico', textAlign: 'center'}}
           style={appBarStyle}
           iconElementRight={

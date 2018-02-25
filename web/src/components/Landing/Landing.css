@@ -84,8 +84,8 @@
     height: 100vh;
     margin: 0;
 
-    color: #fff;
-    background-color: #06b;
+    color: #06b;
+    /*background-color: #06b;*/
 }
 .containerHome
 {
@@ -100,6 +100,9 @@
     font-family: 'Pacifico', cursive;
 
     margin: 0 0 20px;
+}
+.logoSpan {
+    color: #b00;
 }
 .motto
 {
@@ -126,8 +129,8 @@
 
     width: 100%;
 
-    color: rgba(255, 255, 255, .6);
-    background-color: rgba(0, 102, 187, .6);;
+    background-color: rgba(255, 255, 255, .6);
+    color: rgba(0, 102, 187, .8);;
 }
 .homeFooter a:after
 {
