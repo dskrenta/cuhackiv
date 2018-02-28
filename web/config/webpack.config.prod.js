@@ -174,9 +174,6 @@ module.exports = {
                     loader: require.resolve('style-loader'),
                     options: {
                       hmr: false,
-                      modules: true,
-                      minimize: true,
-                      sourceMap: true,
                     },
                   },
                   use: [
@@ -186,6 +183,7 @@ module.exports = {
                         importLoaders: 1,
                         minimize: true,
                         sourceMap: shouldUseSourceMap,
+                        modules: true,
                       },
                     },
                     {
